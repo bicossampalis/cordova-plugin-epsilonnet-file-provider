@@ -22,7 +22,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     
     id="cordova-plugin-epsilonnet-file-provider"
-    version="0.0.3">
+    version="0.0.4">
     <name>cordova-plugin-epsilonnet-file-provider</name>
     <description>Cordova File Provider Plugin</description>
     <license>Apache 2.0</license>
@@ -33,6 +33,13 @@
 	
 	
 		
+		<config-file target="AndroidManifest.xml" platform="android" parent="/manifest/application/activity" mode="merge">
+            <intent-filter>
+                <action android:name="cordova.plugin.epsilonnet.file.provider.ACTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </config-file>
+		
         <config-file target="AndroidManifest.xml" platform="android" parent="/manifest" mode="merge">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         </config-file>
@@ -42,7 +49,7 @@
         <config-file target="AndroidManifest.xml" platform="android" parent="/manifest/application" mode="merge">
             <provider
                 android:name="android.support.v4.content.FileProvider"
-                android:authorities="${applicationId}.fileprovider"
+                android:authorities="${applicationId}.cordova.plugin.epsilonnet.file.provider.fileprovider"
                 android:exported="false"
                 android:grantUriPermissions="true">
                 <meta-data
