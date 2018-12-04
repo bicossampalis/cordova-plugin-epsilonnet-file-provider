@@ -22,7 +22,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     
     id="cordova-plugin-epsilonnet-file-provider"
-    version="0.0.5">
+    version="0.0.6">
     <name>cordova-plugin-epsilonnet-file-provider</name>
     <description>Cordova File Provider Plugin</description>
     <license>Apache 2.0</license>
@@ -59,7 +59,7 @@
         </config-file>
         
 		<resource-file src="provider_paths.xml" target="res/xml/provider_paths.xml"/>
-		
+		<framework src="com.android.support:support-v4:27.1.0" />
 		
 		
     </platform>
