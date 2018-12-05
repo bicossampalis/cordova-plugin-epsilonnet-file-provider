@@ -20,7 +20,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     
     id="cordova-plugin-epsilonnet-file-provider"
-    version="0.0.10">
+    version="0.0.11">
     <name>cordova-plugin-epsilonnet-file-provider</name>
     <description>Cordova File Provider Plugin</description>
     <license>Apache 2.0</license>
@@ -28,19 +28,18 @@
 
     <!-- android -->
     <platform name="android">
-	
-	
-	
-	
-	
-	
 
-
-       
-
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
                 android:name="com.google.zxing.client.android.CaptureActivity"
                 android:clearTaskOnLaunch="true"
@@ -53,23 +52,18 @@
                     <category android:name="android.intent.category.DEFAULT"/>
                 </intent-filter>
             </activity>
-			
-			
             <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:label="Share">
                 <intent-filter>
-                    <action android:name="com.phonegap.plugins.barcodescanner.ENCODE"/>
+                    <action android:name="cordova.plugin.epsilonnet.file.provider.ENCODE"/>
                     <category android:name="android.intent.category.DEFAULT"/>
                 </intent-filter>
             </activity>
-			
-			
             <activity android:name="com.google.zxing.client.android.HelpActivity" android:label="Share">
                 <intent-filter>
                     <action android:name="android.intent.action.VIEW"/>
                     <category android:name="android.intent.category.DEFAULT"/>
                 </intent-filter>
             </activity>
-			
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
@@ -79,8 +73,21 @@
             <uses-feature android:name="android.hardware.camera" android:required="false" />
         </config-file>
 
+        <framework src="barcodescanner.gradle" custom="true" type="gradleReference"/>
+        <resource-file src="barcodescanner-release-2.0.1.aar" target="libs/barcodescanner.aar" />
 
         <dependency id="cordova-plugin-compat" version="^1.0.0" />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
