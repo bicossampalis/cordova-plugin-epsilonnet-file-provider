@@ -20,7 +20,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     
     id="cordova-plugin-epsilonnet-file-provider"
-    version="0.0.11">
+    version="0.0.12">
     <name>cordova-plugin-epsilonnet-file-provider</name>
     <description>Cordova File Provider Plugin</description>
     <license>Apache 2.0</license>
@@ -73,8 +73,8 @@
             <uses-feature android:name="android.hardware.camera" android:required="false" />
         </config-file>
 
-        <framework src="barcodescanner.gradle" custom="true" type="gradleReference"/>
-        <resource-file src="barcodescanner-release-2.0.1.aar" target="libs/barcodescanner.aar" />
+        <!-- <framework src="barcodescanner.gradle" custom="true" type="gradleReference"/> -->
+        <!-- <resource-file src="barcodescanner-release-2.0.1.aar" target="libs/barcodescanner.aar" /> -->
 
         <dependency id="cordova-plugin-compat" version="^1.0.0" />
 	
