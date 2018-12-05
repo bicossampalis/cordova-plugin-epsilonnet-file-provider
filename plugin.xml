@@ -7,9 +7,7 @@
   to you under the Apache License, Version 2.0 (the
   "License"); you may not use this file except in compliance
   with the License.  You may obtain a copy of the License at
-
     http://www.apache.org/licenses/LICENSE-2.0
-
   Unless required by applicable law or agreed to in writing,
   software distributed under the License is distributed on an
   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -22,7 +20,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     
     id="cordova-plugin-epsilonnet-file-provider"
-    version="0.0.6">
+    version="0.0.7">
     <name>cordova-plugin-epsilonnet-file-provider</name>
     <description>Cordova File Provider Plugin</description>
     <license>Apache 2.0</license>
@@ -30,37 +28,20 @@
 
     <!-- android -->
     <platform name="android">
-	
-	
-		
-		<config-file target="AndroidManifest.xml" platform="android" parent="/manifest/application/activity" mode="merge">
-            <intent-filter>
-                <action android:name="cordova.plugin.epsilonnet.file.provider.ACTION" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </config-file>
-		
-        <config-file target="AndroidManifest.xml" platform="android" parent="/manifest" mode="merge">
-            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        </config-file>
-        <config-file target="AndroidManifest.xml" platform="android" parent="/manifest" mode="merge">
-            <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-        </config-file>
-        <config-file target="AndroidManifest.xml" platform="android" parent="/manifest/application" mode="merge">
-            <provider
-                android:name="android.support.v4.content.FileProvider"
-                android:authorities="${applicationId}.cordova.plugin.epsilonnet.file.provider.fileprovider"
-                android:exported="false"
-                android:grantUriPermissions="true">
-                <meta-data
-                    android:name="android.support.FILE_PROVIDER_PATHS"
-                    android:resource="@xml/provider_paths"/>
-            </provider>
+        <config-file target="AndroidManifest.xml" parent="application">
+          <provider
+              android:name="android.support.v4.content.FileProvider"
+              android:authorities="${applicationId}.provider"
+              android:exported="false"
+              android:grantUriPermissions="true">
+              <meta-data
+                  android:name="android.support.FILE_PROVIDER_PATHS"
+                  android:resource="@xml/provider_paths"/>
+          </provider>
         </config-file>
         
-		<resource-file src="provider_paths.xml" target="res/xml/provider_paths.xml"/>
-		<framework src="com.android.support:support-v4:27.1.0" />
-		
-		
+        <framework src="com.android.support:support-v4:24.1.1+" />
+
+        <source-file src="provider_paths.xml" target-dir="res/xml" />
     </platform>
 </plugin>
